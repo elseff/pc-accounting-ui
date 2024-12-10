@@ -3,5 +3,5 @@
  */
 export interface RemoveDeviceRequest {
     deviceId: number,
-    compuerId: number   
+    computerId: number   
 }

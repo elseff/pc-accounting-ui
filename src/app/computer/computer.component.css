@@ -1,0 +1,31 @@
+p {
+    font-size: x-large;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+.computer-element {
+    background-color: rgb(212, 236, 240);
+    border-width: 1;
+    border: dashed darkslateblue;
+    padding: 1%;
+    margin: 1%;
+    max-width: 30%;
+}
+
+.computer-devices-el {
+    background-color: rgb(166, 187, 190);
+}
+
+.compuer-device-el {
+    margin: 1%;
+    background-color: rgb(146, 167, 170);
+}
+
+.delete-device-button {
+    margin: 1%;
+    padding: 1%;
+    background-color: lightcoral;
+}
