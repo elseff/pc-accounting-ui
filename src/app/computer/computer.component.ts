@@ -5,17 +5,19 @@ import { RouterOutlet } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 import { PutDeviceRequest } from '../../_model/device/PutDeviceRequest';
 import { RemoveDeviceRequest } from '../../_model/device/RemoveDeviceRequest';
+import { AddDeviceComponent } from "../add-device/add-device.component";
 
 @Component({
   selector: 'app-computer',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgIf, ],
+  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent],
   templateUrl: './computer.component.html',
   styleUrl: './computer.component.css'
 })
 export class ComputerComponent {
 
   computers: ComputerModel[] = [];
+  isAddDevice: boolean = false;
 
   constructor(private computerService: ComputerService){
 
@@ -48,5 +50,9 @@ export class ComputerComponent {
       }
     })
     
+   }
+
+   addDevice(){
+    this.isAddDevice = !this.isAddDevice;
    }
 }

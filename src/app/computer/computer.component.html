@@ -10,13 +10,19 @@
         <p *ngIf="computer.ready"><b>Готовность: </b>Готов</p> 
         <p *ngIf="!computer.ready"><b>Готовность: </b>Не готов</p> 
         <li *ngIf="computer.cabinet!=null">Кабинет: {{computer.cabinet}}</li>
-        <div class="computer-devices-el" *ngIf="computer.devices.length>0">
+        <div class="computer-devices-el" *ngIf="computer.devices != undefined && computer.devices.length>0">
           <p>Устройства:</p>
             <div *ngFor="let device of computer.devices" class="compuer-device-el">
               <p><b>{{device.type.code}}</b> ({{device.type.group}})</p>
               <p>{{device.title}}</p>
               <button class="delete-device-button" (click)="removeDevice(computer.id, device.id)">Удалить из компьютера</button>
             </div>
+        </div>
+        <div class="computer-add-device">
+          <button class="add-device-button" (click)="addDevice()">Добавить устройство</button>
+        </div>
+        <div *ngIf="isAddDevice">
+          <app-add-device></app-add-device>
         </div>
       </div>
     </div>
