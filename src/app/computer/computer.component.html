@@ -22,7 +22,7 @@
           <button class="add-device-button" (click)="addDevice(computer.id)">Добавить устройство</button>
         </div>
         <div *ngIf="isAddDevice && computerFor===computer.id">
-          <app-add-device [computerId]="computer.id"></app-add-device>
+          <app-add-device (computer)="findComputers()" [computerId]="computer.id"></app-add-device>
         </div>
       </div>
     </div>

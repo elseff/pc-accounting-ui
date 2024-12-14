@@ -54,11 +54,15 @@ export class ComputerComponent {
    }
 
    addDevice(computerId: number){
-    this.isAddDevice = !this.isAddDevice;
     if(this.computerFor === undefined){
+      this.isAddDevice = true;
       this.computerFor = computerId;
-    }else{
+    }else if(this.computerFor===computerId){
       this.computerFor = undefined;
+      this.isAddDevice = false;
+    }else{
+      this.isAddDevice = true;
+      this.computerFor = computerId;
     }
    }
 }
