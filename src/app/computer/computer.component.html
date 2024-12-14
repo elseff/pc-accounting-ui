@@ -19,10 +19,10 @@
             </div>
         </div>
         <div class="computer-add-device">
-          <button class="add-device-button" (click)="addDevice()">Добавить устройство</button>
+          <button class="add-device-button" (click)="addDevice(computer.id)">Добавить устройство</button>
         </div>
-        <div *ngIf="isAddDevice">
-          <app-add-device></app-add-device>
+        <div *ngIf="isAddDevice && computerFor===computer.id">
+          <app-add-device [computerId]="computer.id"></app-add-device>
         </div>
       </div>
     </div>

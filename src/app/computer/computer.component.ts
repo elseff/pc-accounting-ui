@@ -18,6 +18,7 @@ export class ComputerComponent {
 
   computers: ComputerModel[] = [];
   isAddDevice: boolean = false;
+  computerFor?: number = undefined;
 
   constructor(private computerService: ComputerService){
 
@@ -44,7 +45,7 @@ export class ComputerComponent {
                 console.log(r.message)
               }
               );
-              // console.log('устройство ' + d.title + ' удалено из компьюетра ' + c.title)
+              console.log('устройство ' + d.title + ' удалено из компьюетра ' + c.title)
           }
         })
       }
@@ -52,7 +53,12 @@ export class ComputerComponent {
     
    }
 
-   addDevice(){
+   addDevice(computerId: number){
     this.isAddDevice = !this.isAddDevice;
+    if(this.computerFor === undefined){
+      this.computerFor = computerId;
+    }else{
+      this.computerFor = undefined;
+    }
    }
 }

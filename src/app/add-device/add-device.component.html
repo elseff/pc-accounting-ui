@@ -1,6 +1,19 @@
 <div class="add-device-element">
     <h3>Доступные устройства</h3>
     <div class="devices-el">
-        <app-devices></app-devices>
+        <div *ngIf="devices!=undefined && devices.length>0">
+            <div *ngFor="let device of devices">
+                <button (click)="addDevice(device.id)">
+                    <div>
+                        <p><b>id:</b> {{device.id}}</p>
+                        <p><b>Название:</b> {{device.title}}</p>
+                        <p><b>Тип:</b> {{device.type.code}}</p>
+                        <p><b>Группа:</b> {{device.type.group}}</p>
+                        <p><b>Инвентарный номер:</b> {{device.number}}</p>
+                        <p><b>Цена:</b> {{device.price}}</p>
+                    </div>
+                </button>
+            </div>
+        </div>
     </div>
 </div>

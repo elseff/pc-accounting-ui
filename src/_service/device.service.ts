@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { DeviceModel } from '../_model/device/DeviceModel';
@@ -18,6 +18,7 @@ export class DeviceService {
   }
 
   findAllDevices(): Observable<DeviceModel[]> {
-    return this.httpClient.get<DeviceModel[]>(this.api, {headers: this.headers});
+    const params:HttpParams =  new HttpParams().set('free','true')
+    return this.httpClient.get<DeviceModel[]>(this.api, {headers: this.headers, params: params});
 }
 }
