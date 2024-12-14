@@ -35,3 +35,14 @@ h1 {
     padding: 1%;
     background-color: rgb(128, 240, 162);
 }
+
+.computer-disassable-btn{
+    margin: 1%;
+    padding: 1%;
+    background-color: burlywood;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}

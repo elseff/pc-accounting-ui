@@ -18,8 +18,13 @@
               <button class="delete-device-button" (click)="removeDevice(computer.id, device.id)">Удалить из компьютера</button>
             </div>
         </div>
-        <div class="computer-add-device">
-          <button class="add-device-button" (click)="addDevice(computer.id)">Добавить устройство</button>
+        <div class="buttons">
+          <div class="computer-disassamble">
+            <button class="computer-disassable-btn">Разобрать компьютер</button>
+          </div>
+          <div class="computer-add-device">
+            <button class="add-device-button" (click)="addDevice(computer.id)">Добавить устройство</button>
+          </div>
         </div>
         <div *ngIf="isAddDevice && computerFor===computer.id">
           <app-add-device (computer)="findComputers()" [computerId]="computer.id"></app-add-device>
