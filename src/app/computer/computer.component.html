@@ -1,41 +1,51 @@
-<div>
-    <button (click)="findComputers()">Получить все компьютеры</button>
-  </div>
-  <div>
-    <div *ngFor="let computer of computers">
-      <div class="computer-element">
-        <p><b>id:</b> {{computer.id}}</p>
-        <p><b>Инвентарный номер:</b> {{computer.number}}</p>
-        <p><b>Название:</b> {{computer.title}}</p>
-        <p *ngIf="computer.ready"><b>Готовность: </b>Готов</p> 
-        <p *ngIf="!computer.ready"><b>Готовность: </b>Не готов</p> 
-        <li *ngIf="computer.cabinet!=null">Кабинет: {{computer.cabinet}}</li>
-        <div class="computer-devices-el" *ngIf="computer.devices != undefined && computer.devices.length>0">
-          <p>Устройства:</p>
-            <div *ngFor="let device of computer.devices" class="compuer-device-el">
-              <p><b>{{device.type.code}}</b> ({{device.type.group}})</p>
-              <p>{{device.title}}</p>
-              <button class="delete-device-button" (click)="removeDevice(computer.id, device.id)">Удалить из компьютера</button>
+<div class="computers-form">
+  <div class="all-computers">
+    <div>
+      <button class="update-computers-btn" (click)="findComputers()">Обновить</button>
+      </div>
+    
+      <div>
+        <div *ngFor="let computer of computers">
+          <div class="computer-element">
+            <p><b>id:</b> {{computer.id}}</p>
+            <p><b>Инвентарный номер:</b> {{computer.number}}</p>
+            <p><b>Название:</b> {{computer.title}}</p>
+            <p *ngIf="computer.ready"><b>Готовность: </b>Готов</p> 
+            <p *ngIf="!computer.ready"><b>Готовность: </b>Не готов</p> 
+            <li *ngIf="computer.cabinet!=null">Кабинет: {{computer.cabinet}}</li>
+            <div class="computer-devices-el" *ngIf="computer.devices != undefined && computer.devices.length>0">
+              <p>Устройства:</p>
+                <div *ngFor="let device of computer.devices" class="compuer-device-el">
+                  <p><b>{{device.type.code}}</b> ({{device.type.group}})</p>
+                  <p>{{device.title}}</p>
+                  <button class="delete-device-button" (click)="removeDevice(computer.id, device.id)">Удалить из компьютера</button>
+                </div>
             </div>
-        </div>
-        <div class="buttons">
-          <div class="disassemble-block">
-            <div class="computer-disassamble">
-              <button class="computer-disassable-btn" (click)="disassemble(computer.id)">Разобрать компьютер</button>
+            <div class="buttons">
+              <div class="disassemble-block">
+                <div class="computer-disassamble">
+                  <button class="computer-disassable-btn" (click)="disassemble(computer.id)">Разобрать компьютер</button>
+                </div>
+                <div>
+                  <label>
+                    <input type="checkbox"  value="На склад" [(ngModel)]="toWarehouse"> На склад
+                  </label>
+                </div>
+              </div>
+              <div class="computer-add-device">
+                <button class="add-device-button" (click)="addDevice(computer.id)">Добавить устройство</button>
+              </div>
             </div>
-            <div>
-              <label>
-                <input type="checkbox"  value="На склад" [(ngModel)]="toWarehouse"> На склад
-              </label>
+            <div *ngIf="isAddDevice && computerFor===computer.id">
+              <app-add-device (computer)="findComputers()" [computerId]="computer.id"></app-add-device>
             </div>
           </div>
-          <div class="computer-add-device">
-            <button class="add-device-button" (click)="addDevice(computer.id)">Добавить устройство</button>
-          </div>
-        </div>
-        <div *ngIf="isAddDevice && computerFor===computer.id">
-          <app-add-device (computer)="findComputers()" [computerId]="computer.id"></app-add-device>
         </div>
       </div>
-    </div>
   </div>
+
+  <div class="add-computer">
+    <app-add-computer></app-add-computer>
+  </div>
+</div>
+

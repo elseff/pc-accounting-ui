@@ -12,7 +12,6 @@ h1 {
     border: dashed darkslateblue;
     padding: 1%;
     margin: 1%;
-    max-width: 30%;
 }
 
 .computer-devices-el {
@@ -28,18 +27,21 @@ h1 {
     margin: 1%;
     padding: 1%;
     background-color: lightcoral;
+    font-size: large;
 }
 
 .add-device-button {
     margin: 1%;
     padding: 1%;
     background-color: rgb(128, 240, 162);
+    font-size: large;
 }
 
 .computer-disassable-btn{
     margin: 1%;
     padding: 1%;
     background-color: burlywood;
+    font-size: large;
 }
 
 .buttons {
@@ -50,4 +52,30 @@ h1 {
 .disassemble-block {
     display: flex;
     justify-content: space-around;
+}
+
+.all-computers {
+
+    width: 40%;
+}
+
+.add-computer{
+
+    width: 55%;
+}
+
+.computers-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.update-computers-btn{
+    background-color: antiquewhite;
+    border-color: rgb(247, 216, 169);
+    border-style: solid;
+    border-width: 3px;
+    padding: 10px 15px;
+    font-size: large;
 }

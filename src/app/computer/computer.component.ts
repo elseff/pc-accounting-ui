@@ -8,11 +8,12 @@ import { RemoveDeviceRequest } from '../../_model/device/RemoveDeviceRequest';
 import { AddDeviceComponent } from "../add-device/add-device.component";
 import { BlobOptions } from 'node:buffer';
 import { FormsModule, NgModel } from '@angular/forms';
+import { AddComputerComponent } from "../add-computer/add-computer.component";
 
 @Component({
   selector: 'app-computer',
   standalone: true,
-  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent, FormsModule],
+  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent, FormsModule, AddComputerComponent],
   templateUrl: './computer.component.html',
   styleUrl: './computer.component.css'
 })

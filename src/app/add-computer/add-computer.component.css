@@ -1,0 +1,23 @@
+.title {
+    margin: 1% 2%;
+}
+
+.computer-types-input {
+    padding: 5px;
+    font-size: large;
+}
+.computer-title-input {
+    padding: 5px;
+    font-size: large;
+}
+
+.block {
+    padding: 1%;
+}
+
+.add-computer-btn {
+    margin: 1%;
+    padding: 1%;
+    background-color: rgb(118, 216, 134);
+    font-size: large;
+}
