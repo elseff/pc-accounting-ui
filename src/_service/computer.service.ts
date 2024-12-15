@@ -32,10 +32,10 @@ export class ComputerService {
         return this.httpClient.post<AddComputerResponse>(this.api, request, {headers: this.headers});
     }
 
-    diassembleComputer(computerId: number, toWarehouse: boolean): Observable<AddComputerResponse> {
+    diassembleComputer(computerId: number, toWarehouse: boolean): Observable<string> {
         const params = new HttpParams().set('computerId', computerId).set('toWarehouse', toWarehouse);
         const options = {params: params, headers: this.headers}
-        return this.httpClient.post<AddComputerResponse>(this.api + '/' + computerId + '/disassemble', options);
+        return this.httpClient.post<string>(this.api + '/' + computerId + '/disassemble', options);
     }
 
     removeDevice(request: RemoveDeviceRequest): Observable<RemoveDeviceResponse> {

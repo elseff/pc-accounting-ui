@@ -6,11 +6,13 @@ import { NgFor, NgIf } from '@angular/common';
 import { PutDeviceRequest } from '../../_model/device/PutDeviceRequest';
 import { RemoveDeviceRequest } from '../../_model/device/RemoveDeviceRequest';
 import { AddDeviceComponent } from "../add-device/add-device.component";
+import { BlobOptions } from 'node:buffer';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-computer',
   standalone: true,
-  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent],
+  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent, FormsModule],
   templateUrl: './computer.component.html',
   styleUrl: './computer.component.css'
 })
@@ -19,9 +21,10 @@ export class ComputerComponent {
   computers: ComputerModel[] = [];
   isAddDevice: boolean = false;
   computerFor?: number = undefined;
+  toWarehouse: boolean = true;
 
   constructor(private computerService: ComputerService){
-
+    
   }
   findComputers() {
     this.computers = []
@@ -32,8 +35,6 @@ export class ComputerComponent {
    }
    
    removeDevice(computerIdParam: number, deviceIdParam: number){
-      console.log(computerIdParam)
-      console.log(deviceIdParam)
     this.computers.forEach(c=>{
       if(c.id===computerIdParam){
         c.devices.forEach(d=>{
@@ -64,5 +65,16 @@ export class ComputerComponent {
       this.isAddDevice = true;
       this.computerFor = computerId;
     }
+   }
+
+   disassemble(computerId: number){
+      this.computerService.diassembleComputer(computerId, this.toWarehouse)
+      .subscribe();
+      this.computers.forEach(comp=>{
+        if(comp.id===computerId)
+        {
+          comp.devices = []
+        }
+      })
    }
 }

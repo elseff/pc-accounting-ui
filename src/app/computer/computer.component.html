@@ -19,8 +19,15 @@
             </div>
         </div>
         <div class="buttons">
-          <div class="computer-disassamble">
-            <button class="computer-disassable-btn">Разобрать компьютер</button>
+          <div class="disassemble-block">
+            <div class="computer-disassamble">
+              <button class="computer-disassable-btn" (click)="disassemble(computer.id)">Разобрать компьютер</button>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox"  value="На склад" [(ngModel)]="toWarehouse"> На склад
+              </label>
+            </div>
           </div>
           <div class="computer-add-device">
             <button class="add-device-button" (click)="addDevice(computer.id)">Добавить устройство</button>
