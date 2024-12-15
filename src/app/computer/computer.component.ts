@@ -69,12 +69,16 @@ export class ComputerComponent {
    }
 
    disassemble(computerId: number){
+    console.log(this.toWarehouse)
       this.computerService.diassembleComputer(computerId, this.toWarehouse)
       .subscribe();
       this.computers.forEach(comp=>{
         if(comp.id===computerId)
         {
           comp.devices = []
+          if(this.toWarehouse==false){
+            this.computers.splice(this.computers.indexOf(comp),1)
+          }
         }
       })
    }

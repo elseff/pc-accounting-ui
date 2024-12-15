@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddComputerComponent {
 
-  title: string = "Новый компьютер";
+  title: string = "";
   type: string = "pc";
   constructor(private computerService: ComputerService){
 
@@ -20,6 +20,9 @@ export class AddComputerComponent {
 
   addComputer(){
     const request: AddEmptyComputerRequest = {title: this.title, type: this.type}
-    this.computerService.addComputer(request).subscribe(response=>console.log(response))
+    if(this.title!=""){
+      this.computerService.addComputer(request).subscribe(response=>console.log(response));
+      this.title=""
+    }
   }
 }

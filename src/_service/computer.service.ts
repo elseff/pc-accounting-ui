@@ -9,6 +9,7 @@ import { RemoveDeviceResponse } from "../_model/device/RemoveDeviceResponse";
 import { PutDeviceResponse } from "../_model/device/PutDeviceResponse";
 import { RemoveDeviceRequest } from "../_model/device/RemoveDeviceRequest";
 import { PutDeviceRequest } from "../_model/device/PutDeviceRequest";
+import { stringify } from "querystring";
 
 @Injectable({
     providedIn: 'root'
@@ -33,9 +34,8 @@ export class ComputerService {
     }
 
     diassembleComputer(computerId: number, toWarehouse: boolean): Observable<string> {
-        const params = new HttpParams().set('computerId', computerId).set('toWarehouse', toWarehouse);
-        const options = {params: params, headers: this.headers}
-        return this.httpClient.post<string>(this.api + '/' + computerId + '/disassemble', options);
+        const options = {headers: this.headers}
+        return this.httpClient.post<string>(this.api + '/' + computerId + '/disassemble/'+toWarehouse,options);
     }
 
     removeDevice(request: RemoveDeviceRequest): Observable<RemoveDeviceResponse> {

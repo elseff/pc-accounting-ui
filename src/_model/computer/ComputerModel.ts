@@ -10,6 +10,7 @@ export interface ComputerModel {
     title: string,
     ready: boolean,
     cabinet: number,
+    type: string,
     responsibleEmployee: EmployeeModel[],
     devices: DeviceModel[]
 }
