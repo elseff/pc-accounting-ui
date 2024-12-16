@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ComputerModel } from '../../_model/computer/ComputerModel';
 import { ComputerService } from '../../_service/computer.service';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 import { PutDeviceRequest } from '../../_model/device/PutDeviceRequest';
 import { RemoveDeviceRequest } from '../../_model/device/RemoveDeviceRequest';
@@ -13,7 +13,7 @@ import { AddComputerComponent } from "../add-computer/add-computer.component";
 @Component({
   selector: 'app-computer',
   standalone: true,
-  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent, FormsModule, AddComputerComponent],
+  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent, FormsModule, AddComputerComponent, RouterModule],
   templateUrl: './computer.component.html',
   styleUrl: './computer.component.css'
 })

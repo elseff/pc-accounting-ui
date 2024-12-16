@@ -1,3 +1,4 @@
+
 p {
     font-size: x-large;
 }
@@ -12,6 +13,11 @@ h1 {
     border: dashed darkslateblue;
     padding: 1%;
     margin: 1%;
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход для компонента компа */
+}
+
+.computer-element:hover {
+    transform: scale(1.03); 
 }
 
 .computer-devices-el {
@@ -21,6 +27,12 @@ h1 {
 .compuer-device-el {
     margin: 1%;
     background-color: rgb(146, 167, 170);
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход для устройства */
+}
+
+.compuer-device-el:hover {
+    transform: scale(1.05); 
+    background-color: rgb(104, 126, 129);
 }
 
 .delete-device-button {
@@ -28,6 +40,12 @@ h1 {
     padding: 1%;
     background-color: lightcoral;
     font-size: large;
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход для кнопки удаления */
+}
+
+.delete-device-button:hover {
+    transform: scale(1.1); 
+    background-color: rgb(204, 110, 110);
 }
 
 .add-device-button {
@@ -35,13 +53,25 @@ h1 {
     padding: 1%;
     background-color: rgb(128, 240, 162);
     font-size: large;
+    transition: transform 0.3s, background-color 0.3s; /* Добавление переключений */
 }
 
-.computer-disassable-btn{
+.add-device-button:hover {
+    transform: scale(1.05); 
+    background-color: rgb(104, 240, 130); /* Изменяем цвет при наведении */
+}
+
+.computer-disassable-btn {
     margin: 1%;
     padding: 1%;
     background-color: burlywood;
     font-size: large;
+    transition: transform 0.3s, background-color 0.3s; /* Добавлено */
+}
+
+.computer-disassable-btn:hover {
+    transform: scale(1.05); 
+    background-color: rgb(222, 185, 135); /* Изменяем цвет при наведении */
 }
 
 .buttons {
@@ -55,12 +85,10 @@ h1 {
 }
 
 .all-computers {
-
     width: 40%;
 }
 
-.add-computer{
-
+.add-computer {
     width: 55%;
 }
 
@@ -71,11 +99,34 @@ h1 {
     justify-content: space-around;
 }
 
-.update-computers-btn{
+.update-computers-btn {
     background-color: antiquewhite;
     border-color: rgb(247, 216, 169);
     border-style: solid;
     border-width: 3px;
     padding: 10px 15px;
     font-size: large;
+    margin: 5px;
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход */
+}
+
+.update-computers-btn:hover {
+    transform: scale(1.05); /* Эффект изменения размера при наведении */
+    background-color: rgb(255, 239, 191); /* Изменение цвета при наведении */
+}
+
+
+.title {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.title h2 {
+    font-size: 2.5em; /* Увеличенный размер шрифта для заголовка */
+    color: #e74c3c; /* Яркий красный цвет для заголовка */
+    transition: color 0.3s;
+}
+
+.title h2:hover {
+    color: #3498db; /* Изменение цвета при наведении на яркий синий */
 }

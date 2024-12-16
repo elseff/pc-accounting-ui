@@ -3,7 +3,7 @@
     <div class="devices-el">
         <div *ngIf="devices!=undefined && devices.length>0">
             <div *ngFor="let device of devices">
-                <button (click)="addDevice(device.id)">
+                <button class="device-el" (click)="addDevice(device.id)">
                     <div>
                         <p><b>id:</b> {{device.id}}</p>
                         <p><b>Название:</b> {{device.title}}</p>

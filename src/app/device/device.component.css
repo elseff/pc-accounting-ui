@@ -1,0 +1,72 @@
+.computers-btn{
+    background-color: antiquewhite;
+    border-color: rgb(247, 216, 169);
+    border-style: solid;
+    border-width: 3px;
+    padding: 10px 15px;
+    font-size: large;
+    margin: 5px;
+}
+
+
+
+/* device-list.component.css */
+.device-list {
+    display: block; /* Блочное отображение контейнера */
+    max-width: 300px; /* Ограничим ширину для лучшего вида */
+    
+}
+
+.device-card {
+    background-color: #f9f9f9; /* Светлый фоновый цвет */
+    border: 2px solid transparent; /* Начально прозрачная обводка */
+    border-radius: 10px; /* Скругление углов */
+    width: 100%; /* Полная ширина карточки */
+    margin: 10px 0; /* Отступы только сверху и снизу для вертикального выравнивания */
+    padding: 15px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход для эффекта */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стили для конкретных типов устройств */
+.device-laptop {
+    border-color: #007bff; /* Цвет границы для ноутбуков */
+}
+
+.device-phone {
+    border-color: #28a745; /* Цвет границы для телефонов */
+}
+
+.device-tablet {
+    border-color: #ffc107; /* Цвет границы для планшетов */
+}
+
+.device-card:hover {
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+    background-color: #e0f7fa; /* Изменение фона при наведении */
+}
+
+h3 {
+    font-size: 1.5em; /* Размер заголовка */
+    margin: 10px 0; /* Отступ сверху и снизу */
+}
+
+p {
+    margin: 5px 0; /* Отступ между параграфами */
+}
+
+.title {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.title h2 {
+    font-size: 2.5em; /* Увеличенный размер шрифта для заголовка */
+    color: #e74c3c; /* Яркий красный цвет для заголовка */
+    transition: color 0.3s;
+}
+
+.title h2:hover {
+    color: #3498db; /* Изменение цвета при наведении на яркий синий */
+}

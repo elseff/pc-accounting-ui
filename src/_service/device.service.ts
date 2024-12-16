@@ -17,8 +17,12 @@ export class DeviceService {
   constructor(private httpClient: HttpClient){
   }
 
-  findAllDevices(): Observable<DeviceModel[]> {
+  findAllFreeDevices(): Observable<DeviceModel[]> {
     const params:HttpParams =  new HttpParams().set('free','true')
     return this.httpClient.get<DeviceModel[]>(this.api, {headers: this.headers, params: params});
-}
+  }
+
+  findAllDevices(): Observable<DeviceModel[]> {
+    return this.httpClient.get<DeviceModel[]>(this.api, {headers: this.headers});
+  }
 }

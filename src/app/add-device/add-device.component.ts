@@ -19,7 +19,7 @@ export class AddDeviceComponent {
   computer = new EventEmitter();
 
   constructor(private deviceService: DeviceService, private computerService: ComputerService){
-    deviceService.findAllDevices().subscribe(devices=>{
+    deviceService.findAllFreeDevices().subscribe(devices=>{
       console.log(devices)
       devices.forEach(device=>this.devices.push(device))
     })

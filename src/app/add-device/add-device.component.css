@@ -1,3 +1,47 @@
-.add-device-element {
-    background-color: burlywood;
+/* Основной стиль для заголовка секции устройств */
+.add-device-element h3 {
+    text-align: center; /* Центрирование заголовка */
+    font-size: 24px; /* Размер шрифта заголовка */
+    color: #333; /* Темный цвет для текста */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Общий стиль для каждого устройства */
+.devices-el {
+    display: flex; /* Используем flexbox для выравнивания */
+    flex-direction: column; /* Вертикальное выравнивание элементов */
+    align-items: center; /* Центрирование содержимого */
+}
+
+/* Стиль для кнопки устройства */
+.device-el {
+    background-color: #ffffff; /* Белый фон */
+    border: 2px solid #007bff; /* Темно-синий цвет границы */
+    border-radius: 8px; /* Закругление углов */
+    width: 90%; /* Ширина кнопки */
+    max-width: 400px; /* Максимальная ширина кнопки */
+    margin: 10px 0; /* Вертикальные отступы */
+    padding: 15px; /* Внутренние отступы */
+    text-align: left; /* Выравнивание текста влево */
+    cursor: pointer; /* Указатель курсора при наведении */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Плавный переход */
+}
+
+/* Эффект при наведении на кнопку устройства */
+.device-el:hover {
+    background-color: #f0f8ff; /* Светло-голубой цвет фона при наведении */
+    transform: translateY(-5px); /* Подъем кнопки при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+}
+
+/* Стиль для текста внутри кнопки */
+.device-el p {
+    margin: 5px 0; /* Отступы между параграфами */
+    color: #555; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта для текста */
+}
+
+/* Стиль для выделения названий элементов */
+.device-el b {
+    color: #333; /* Цвет для выделенных элементов */
 }
