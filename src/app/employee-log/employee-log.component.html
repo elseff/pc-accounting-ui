@@ -9,7 +9,7 @@
     <button routerLink="/devices/logs" class="base-button">Логи устройств</button>
 </div>
 <div class="employees-logs-list">
-    <div class="employees-log-el" *ngFor="let log of logs">
+    <div class="employees-log-el" *ngFor="let log of logs" [ngClass]="{'green': log.operation.code === 'pinned', 'red': log.operation.code === 'unpinned'}">
         <h2>{{ log.id }}</h2>
         <div class="date">{{ log.date }}</div>
         <div class="log-computer-el">
