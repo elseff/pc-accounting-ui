@@ -5,7 +5,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common';
 import { PutDeviceRequest } from '../../_model/device/PutDeviceRequest';
 import { RemoveDeviceRequest } from '../../_model/device/RemoveDeviceRequest';
-import { AddDeviceComponent } from "../add-device/add-device.component";
+import { AddDeviceToComputerComponent } from "../add-device-to-computer/add-device-to-computer.component";
 import { BlobOptions } from 'node:buffer';
 import { FormsModule, NgModel } from '@angular/forms';
 import { AddComputerComponent } from "../add-computer/add-computer.component";
@@ -13,7 +13,7 @@ import { AddComputerComponent } from "../add-computer/add-computer.component";
 @Component({
   selector: 'app-computer',
   standalone: true,
-  imports: [NgFor, NgIf, AddDeviceComponent, AddDeviceComponent, FormsModule, AddComputerComponent, RouterModule],
+  imports: [NgFor, NgIf, AddDeviceToComputerComponent, AddDeviceToComputerComponent, FormsModule, AddComputerComponent, RouterModule],
   templateUrl: './computer.component.html',
   styleUrl: './computer.component.css'
 })

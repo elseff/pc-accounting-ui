@@ -1,0 +1,42 @@
+<h1>Добавление нового устройства</h1>
+
+<label>
+    <div class="block">
+        <h3>Название</h3>
+        <input type="text" [(ngModel)]="request.title">
+    </div>
+    <div class="block">
+        <h3>Цена</h3>
+        <input type="number" [(ngModel)]="request.price">
+    </div>
+    <div class="block">
+        <h3>Тип</h3>
+        <select name="device-types" class="device-types-input" [(ngModel)]="request.type">
+            <option [defaultSelected]="true" value="keyboard">Клавиатура</option>
+            <option value="mouse">Мышь</option>
+            <option value="printer">Принтер</option>
+            <option value="display">Монитор</option>
+            <option value="speaker">Колонки</option>
+            <option value="headphones">Наушники</option>
+            <option value="scanner">Сканер</option>
+            <option value="camera">Камера</option>
+            <option value="hard-drive">Жесткий диск</option>
+            <option value="ram">Оперативная память</option>
+            <option value="motherboard">Материнская плата</option>
+            <option value="video-card">Видеокарта</option>
+            <option value="cpu">Процессор</option>
+            <option value="drive">Дисковод</option>
+            <option value="audio-card">Звуковая карта</option>
+            <option value="power-unit">Блок питания</option>
+            <option value="case">Корпус</option>
+            <option value="hdd">HDD</option>
+            <option value="ssd">SSD</option>
+            <option value="network-card">Сетевая карта</option>
+            <option value="cooler">Кулер</option>
+        </select>    
+    </div>
+    
+    <div class="block">
+        <button class="create-device-btn" (click)="addNewDevice()">Добавить</button>
+    </div>
+</label>

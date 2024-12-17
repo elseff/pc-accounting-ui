@@ -9,10 +9,10 @@ import { PutDeviceRequest } from '../../_model/device/PutDeviceRequest';
   selector: 'app-add-device',
   standalone: true,
   imports: [NgFor, NgIf],
-  templateUrl: './add-device.component.html',
-  styleUrl: './add-device.component.css'
+  templateUrl: './add-device-to-computer.component.html',
+  styleUrl: './add-device-to-computer.component.css'
 })
-export class AddDeviceComponent {
+export class AddDeviceToComputerComponent {
   devices: DeviceModel[] =[]
   @Input() computerId: number = -1;
   @Output()

@@ -27,6 +27,7 @@
     text-align: center; /* Центрирование текста */
     transition: transform 0.3s, background-color 0.3s; /* Плавный переход для эффекта */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    border-color: #007bff; /* Цвет границы для ноутбуков */
 }
 
 /* Стили для конкретных типов устройств */
@@ -69,4 +70,23 @@ p {
 
 .title h2:hover {
     color: #3498db; /* Изменение цвета при наведении на яркий синий */
+}
+
+.device-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.add-new-device{
+    width: 35%;
+}
+
+.all-device{
+    width: 50%;
+}
+
+.not-free-device {
+    color: tomato
 }

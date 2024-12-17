@@ -1,27 +1,27 @@
-<div class="title">
-    <h2>Устройства</h2>
+<div class="device-form">
+    <div class="all-devices">
+        <div class="title">
+        <h2>Устройства</h2>
+    </div>
+    
+    <label>
+        <input type="checkbox" value="Только свободные устройства" [(ngModel)]="freeDevices"> Только свободные устройства
+    </label>
+
+    <button class="computers-btn" (click)="findAllDevices()">Обновить</button>
+    <button class="computers-btn" routerLink="/computers">Компьютеры</button>
+
+    <div class="device-list">
+        <div *ngFor="let device of devices" class="device-card">
+          <h3>{{ device.title }}</h3>
+          <p>Тип: {{ device.type.code }} ({{device.type.group}})</p>
+          <p>Цена: {{ device.price | currency }}</p>
+          <p>Номер: {{ device.number }}</p>
+          <h3 *ngIf="device.computerId != undefined" class="not-free-device">УСТРОЙСТВО УСТАНОВЛЕНО В КОМПЬЮТЕРЕ С ID={{device.computerId}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="add-new-device">
+        <app-add-new-device></app-add-new-device>
+    </div>
 </div>
-
-<button class="computers-btn" (click)="findAllDevices()">Обновить</button>
-<button class="computers-btn" routerLink="/computers">Компьютеры</button>
-
-<!-- <div class="devices-block">
-    <div *ngFor="let device of devices" class="device-el">
-        <p><b>id:</b> {{device.id}}</p>
-        <p><b>Инвентарный номер:</b> {{device.number}}</p>
-        <p><b>Название:</b> {{device.title}}</p>
-        <p><b>Тип:</b> {{device.type.code}} ({{device.type.group}})</p>
-    </div>
-</div> -->
-<div class="device-list">
-    <div *ngFor="let device of devices" 
-         [ngClass]="{'device-card': true, 
-                     'device-laptop': device.type.code === 'audio-card',
-                     'device-phone': device.type.code === 'video-card',
-                     'device-tablet': device.type.code === 'display'}">
-      <h3>{{ device.title }}</h3>
-      <p>Тип: {{ device.type.code }} ({{device.type.group}})</p>
-      <p>Цена: {{ device.price | currency }}</p>
-      <p>Номер: {{ device.number }}</p>
-    </div>
-  </div>
