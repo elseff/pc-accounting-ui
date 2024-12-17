@@ -17,9 +17,7 @@ import { stringify } from "querystring";
 )
 export class ComputerService {
     
-        headers =  new HttpHeaders().append('Content-Type', 'application/json');
-    
-    
+    headers =  new HttpHeaders().append('Content-Type', 'application/json');
     api: string = environment.apiUrl + "/computers";
 
     constructor(private httpClient: HttpClient){

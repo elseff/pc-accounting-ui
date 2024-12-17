@@ -33,6 +33,7 @@ h1 {
 .compuer-device-el:hover {
     transform: scale(1.05); 
     background-color: rgb(104, 126, 129);
+    transform: rotate(2deg);
 }
 
 .delete-device-button {
@@ -46,6 +47,7 @@ h1 {
 .delete-device-button:hover {
     transform: scale(1.1); 
     background-color: rgb(204, 110, 110);
+    transform: rotate(-2deg);
 }
 
 .add-device-button {
@@ -59,6 +61,7 @@ h1 {
 .add-device-button:hover {
     transform: scale(1.05); 
     background-color: rgb(104, 240, 130); /* Изменяем цвет при наведении */
+    transform: rotate(-2deg);
 }
 
 .computer-disassable-btn {
@@ -72,6 +75,7 @@ h1 {
 .computer-disassable-btn:hover {
     transform: scale(1.05); 
     background-color: rgb(222, 185, 135); /* Изменяем цвет при наведении */
+    transform: rotate(-2deg);
 }
 
 .buttons {
@@ -99,7 +103,7 @@ h1 {
     justify-content: space-around;
 }
 
-.update-computers-btn {
+.base-button {
     background-color: antiquewhite;
     border-color: rgb(247, 216, 169);
     border-style: solid;
@@ -110,9 +114,10 @@ h1 {
     transition: transform 0.3s, background-color 0.3s; /* Плавный переход */
 }
 
-.update-computers-btn:hover {
-    transform: scale(1.05); /* Эффект изменения размера при наведении */
-    background-color: rgb(255, 239, 191); /* Изменение цвета при наведении */
+.base-button:hover {
+    transform: scale(1.1); /* Эффект изменения размера при наведении */
+    background-color: rgb(201, 185, 136); /* Изменение цвета при наведении */
+    transform: rotate(-2deg);
 }
 
 
@@ -139,4 +144,11 @@ h1 {
     padding: 10px 15px;
     font-size: large;
     margin: 0;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.responsible-employee-el:hover {
+    background-color: rgb(179, 206, 137);
+    border-color: rgb(114, 156, 95);
+    transform: rotate(2deg);
 }
