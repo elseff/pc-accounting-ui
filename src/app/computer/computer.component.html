@@ -18,6 +18,10 @@
             <p *ngIf="computer.ready"><b>Готовность: </b>Готов</p> 
             <p *ngIf="!computer.ready"><b>Готовность: </b>Не готов</p> 
             <li *ngIf="computer.cabinet!=null">Кабинет: {{computer.cabinet}}</li>
+            <div class="responsible-employee-el" *ngIf="computer.responsibleEmployee!undefined">
+              <h2>Ответственный</h2>
+              <p>{{computer.responsibleEmployee.firstName}} {{computer.responsibleEmployee.lastName}} ({{computer.responsibleEmployee.speciality}})</p>
+            </div>
             <div class="computer-devices-el" *ngIf="computer.devices != undefined && computer.devices.length>0">
               <p>Устройства:</p>
                 <div *ngFor="let device of computer.devices" class="compuer-device-el">

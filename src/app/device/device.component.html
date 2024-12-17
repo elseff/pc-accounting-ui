@@ -5,7 +5,7 @@
     </div>
     
     <label>
-        <input type="checkbox" value="Только свободные устройства" [(ngModel)]="freeDevices"> Только свободные устройства
+        <input type="checkbox" value="Только свободные устройства" [(ngModel)]="freeDevices" (change)="findAllDevices()"> Только свободные устройства
     </label>
 
     <button class="computers-btn" (click)="findAllDevices()">Обновить</button>

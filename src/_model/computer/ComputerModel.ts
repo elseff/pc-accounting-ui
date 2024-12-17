@@ -11,6 +11,6 @@ export interface ComputerModel {
     ready: boolean,
     cabinet: number,
     type: string,
-    responsibleEmployee: EmployeeModel[],
+    responsibleEmployee: EmployeeModel,
     devices: DeviceModel[]
 }

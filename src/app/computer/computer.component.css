@@ -130,3 +130,13 @@ h1 {
 .title h2:hover {
     color: #3498db; /* Изменение цвета при наведении на яркий синий */
 }
+
+.responsible-employee-el {
+    background-color: rgb(218, 247, 171);
+    border-color: rgb(152, 206, 128);
+    border-style: solid;
+    border-width: 3px;
+    padding: 10px 15px;
+    font-size: large;
+    margin: 0;
+}
