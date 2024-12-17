@@ -1,0 +1,113 @@
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.update {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: x-large;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.date {
+    font-size: 1.25rem; /* Увеличенный размер шрифта */
+    font-weight: bold; /* Полужирное начертание */
+    color: #007bff; /* Цвет текста для акцента */
+    border: 2px solid #007bff; /* Обводка вокруг даты */
+    border-radius: 5px; /* Закругленные углы для обводки */
+    padding: 5px; /* Внутренние отступы */
+    margin: 5px 0; /* Отступы сверху и снизу */
+    background-color: rgba(0, 123, 255, 0.1); /* Полупрозрачный фон для выделения */
+    text-align: center; /* Центрирование текста */
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход для эффектов */
+    font-size: xx-large;
+}
+
+.date:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Более насыщенный фон при наведении */
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.base-button {
+    background-color: antiquewhite;
+    border-color: rgb(247, 216, 169);
+    border-style: solid;
+    border-width: 3px;
+    padding: 10px 15px;
+    font-size: large;
+    margin: 5px;
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход */
+}
+
+.base-button:hover {
+    transform: scale(1.1); /* Эффект изменения размера при наведении */
+    background-color: rgb(201, 185, 136); /* Изменение цвета при наведении */
+    transform: rotate(-2deg);
+}
+
+.employees-logs-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.employees-log-el {
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 10px;
+    width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Для правильного позиционирования общего фона */
+}
+
+.employees-log-el:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.employees-log-el.red {
+    background-color: #f8d7da; /* Светло-красный фон для добавленной операции */
+    border-color: #dc3545; /* Красная обводка */
+}
+
+.employees-log-el.green {
+    background-color: #d4edda; /* Светло-зеленый фон для удаленной операции */
+    border-color: #155724; /* Зеленая обводка */
+}
+
+.employees-log-el p {
+    margin: 5px 0;
+}
+
+.log-computer-el,
+.log-employee-el {
+    font-size: large;
+    border: 1px solid #316dad;
+    background-color: #d2e5ee;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.log-computer-el h3,
+.log-device-el h3 {
+    margin: 0;
+    color: #193757;
+}

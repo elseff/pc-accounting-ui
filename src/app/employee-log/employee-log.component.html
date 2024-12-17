@@ -1,1 +1,28 @@
-<p>employee-log works!</p>
+<div class="title">
+    <h1>Логи сотрудников</h1>
+</div>
+<div>
+    <button class="update" (click)="findAllLogs()">Обновить</button>
+    <button class="base-button" routerLink="/computers">Компьютеры</button>
+    <button routerLink="/devices" class="base-button">Устройства</button>
+    <button routerLink="/employees" class="base-button">Сотрудники</button>
+    <button routerLink="/devices/logs" class="base-button">Логи устройств</button>
+</div>
+<div class="employees-logs-list">
+    <div class="employees-log-el" *ngFor="let log of logs">
+        <h2>{{ log.id }}</h2>
+        <div class="date">{{ log.date }}</div>
+        <div class="log-computer-el">
+            <h3>Компьютер</h3>
+            <p><b>id:</b> {{ log.computer.id}}</p>
+            <p> {{ log.computer.title}}</p>
+            <p><b>{{log.computer.number}}</b></p>
+        </div>
+        <div class="log-employee-el">
+            <h3>Сотрудник</h3>
+            <p>{{ log.employee.id}}</p>
+            <h3>{{ log.employee.firstName }} {{ log.employee.lastName}} ({{ log.employee.speciality }})</h3>
+        </div>
+        <h2>{{ log.operation.title }} ({{ log.operation.code }})</h2>
+    </div>
+</div>

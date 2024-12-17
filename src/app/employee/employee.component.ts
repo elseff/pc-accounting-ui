@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ComputerEmployeeLogModel } from '../../_model/log/ComputerEmployeeLogModel';
 import { EmployeeLogService } from '../../_service/employee-log.service';
+import { subscribe } from 'diagnostics_channel';
 
 @Component({
   selector: 'app-employee',
@@ -13,9 +14,5 @@ import { EmployeeLogService } from '../../_service/employee-log.service';
   styleUrl: './employee.component.css'
 })
 export class EmployeeComponent {
-  logs: ComputerEmployeeLogModel[] = []
-
-  constructor(private service: EmployeeLogService){
-
-  }
+  
 }
