@@ -1,6 +1,18 @@
-<button class="update" >Обновить</button>
-<button class="base-button" routerLink="/computers">Компьютеры</button>
-<button routerLink="/employees" class="base-button">Сотрудники</button>
-<button routerLink="/devices" class="base-button">Устройства</button>
-<button routerLink="/devices/logs" class="base-button">Логи устройств</button>
-<button routerLink="/employees/logs" class="base-button">Логи сотрудников</button>
+<div>
+    <button class="update" (click)="findAll()">Обновить</button>
+    <button class="base-button" routerLink="/computers">Компьютеры</button>
+    <button routerLink="/employees" class="base-button">Сотрудники</button>
+    <button routerLink="/devices" class="base-button">Устройства</button>
+    <button routerLink="/devices/logs" class="base-button">Логи устройств</button>
+    <button routerLink="/employees/logs" class="base-button">Логи сотрудников</button>
+</div>
+
+<div class="docs-list">
+    <div class="doc-card" *ngFor="let doc of docs">
+        <div class="date">
+            <h3> {{doc.createdAt}}</h3>
+        </div>
+        <h2>{{doc.description}}</h2>
+        <a [href]="link+doc.number" class="link">{{ doc.number }}</a>
+    </div>
+</div>

@@ -28,3 +28,50 @@
     transition: background-color 0.3s;
     font-size: x-large;
 }
+
+/* device-list.component.css */
+.docs-list {
+    display: flex; /* Блочное отображение контейнера */
+    justify-content: center;
+    
+}
+
+.doc-card {
+    background-color: #f9f9f9; /* Светлый фоновый цвет */
+    border: 2px solid transparent; /* Начально прозрачная обводка */
+    border-radius: 10px; /* Скругление углов */
+    width: 450px; /* Полная ширина карточки */
+    margin: 20px; /* Отступы только сверху и снизу для вертикального выравнивания */
+    padding: 15px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход для эффекта */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    border-color: #007bff; /* Цвет границы для ноутбуков */
+}
+.date {
+    font-weight: bold; /* Полужирное начертание */
+    color: #007bff; /* Цвет текста для акцента */
+    border: 2px solid #007bff; /* Обводка вокруг даты */
+    border-radius: 5px; /* Закругленные углы для обводки */
+    padding: 5px; /* Внутренние отступы */
+    margin: 5px 0; /* Отступы сверху и снизу */
+    background-color: rgba(0, 123, 255, 0.1); /* Полупрозрачный фон для выделения */
+    text-align: center; /* Центрирование текста */
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход для эффектов */
+}
+
+.date:hover {
+    background-color: rgba(0, 123, 255, 0.2); /* Более насыщенный фон при наведении */
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.link{
+    font-size: x-large;
+    text-decoration: none;
+    font-style: bold;
+    transition: font-size 0.3s, transform 0.3s; /* Плавный переход для эффектов */
+}
+
+.link:hover{
+    font-size: xx-large;
+}

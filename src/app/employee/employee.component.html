@@ -1,52 +1,58 @@
-<div>
-    <div class="title">
-        <h2>Сотрудники</h2>
-    </div>
-    <div>
-        <button class="update" (click)="findAll()">Обновить</button>
-        <button class="base-button" routerLink="/computers">Компьютеры</button>
-        <button routerLink="/devices" class="base-button">Устройства</button>
-        <button routerLink="/documents" class="base-button">Документы</button>
-        <button routerLink="/devices/logs" class="base-button">Логи устройств</button>
-        <button routerLink="/employees/logs" class="base-button">Логи сотрудников</button>
-    </div>
-    <div class="employee-list">
-        <div class="employee-card" *ngFor="let employee of employees">
-
-            <h2>{{ employee.firstName }} {{ employee.lastName }} {{ employee.patronymic }}</h2>
-            <p>{{ employee.speciality }}</p>
-            <div class="computer-info"*ngIf="employee.computer!=undefined">
-                <h2> ID: {{ employee.computer.id }}</h2>
-                <h2>{{ employee.computer.title }}</h2>
-                <p>{{ employee.computer.number }}</p>    
-                <span class="ready-status" *ngIf="employee.computer.ready===false">Не готов</span>
-                <span class="ready-status" *ngIf="employee.computer.ready===true">Готов</span>
-                
-            </div>
-            <div *ngIf="employee.computer!=undefined">
-                <button class="pin-btn" (click)="unpinComputer(employee.id, employee.computer.id)">Открепить компьютер</button>
-
-                
-                <button class="pass-btn" (click)="clickPass(employee.id)">Передать ответственность</button>
-                <div class="pass-el" *ngIf="availableEmployees.length>0 && empForPass===employee.id">
-                    <h1>Доступные сотрудники</h1>
-                    <div class="a-emp-el" *ngFor="let emp of availableEmployeesFiltered(employee.id)" (click)="passResponsibility(employee.id, emp.id)">
-                        <h2>{{ emp.firstName }} {{ emp.lastName }} {{ emp.patronymic }}</h2>
+<div class="emps-form">
+    <div class="all-emps">
+        <div class="title">
+            <h2>Сотрудники</h2>
+        </div>
+        <div>
+            <button class="update" (click)="findAll()">Обновить</button>
+            <button class="base-button" routerLink="/computers">Компьютеры</button>
+            <button routerLink="/devices" class="base-button">Устройства</button>
+            <button routerLink="/documents" class="base-button">Документы</button>
+            <button routerLink="/devices/logs" class="base-button">Логи устройств</button>
+            <button routerLink="/employees/logs" class="base-button">Логи сотрудников</button>
+        </div>
+        <div class="employee-list">
+            <div class="employee-card" *ngFor="let employee of employees">
+    
+                <h2>{{ employee.firstName }} {{ employee.lastName }} {{ employee.patronymic }}</h2>
+                <p>{{ employee.speciality }}</p>
+                <div class="computer-info"*ngIf="employee.computer!=undefined">
+                    <h2> ID: {{ employee.computer.id }}</h2>
+                    <h2>{{ employee.computer.title }}</h2>
+                    <p>{{ employee.computer.number }}</p>    
+                    <span class="ready-status" *ngIf="employee.computer.ready===false">Не готов</span>
+                    <span class="ready-status" *ngIf="employee.computer.ready===true">Готов</span>
+                    
+                </div>
+                <div *ngIf="employee.computer!=undefined">
+                    <button class="pin-btn" (click)="unpinComputer(employee.id, employee.computer.id)">Открепить компьютер</button>
+    
+                    
+                    <button class="pass-btn" (click)="clickPass(employee.id)">Передать ответственность</button>
+                    <div class="pass-el" *ngIf="availableEmployees.length>0 && empForPass===employee.id">
+                        <h1>Доступные сотрудники</h1>
+                        <div class="a-emp-el" *ngFor="let emp of availableEmployeesFiltered(employee.id)" (click)="passResponsibility(employee.id, emp.id)">
+                            <h2>{{ emp.firstName }} {{ emp.lastName }} {{ emp.patronymic }}</h2>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div *ngIf="employee.computer===undefined">
+                    <button class="unpin-btn" (click)="clickPin(employee.id)">Закрепить компьютер</button>
+                </div>
+                <div class="available-comps" *ngIf="availableComps.length>0 && empForPin===employee.id">
+                    <div class="a-comp-el" *ngFor="let comp of availableComps" (click)="pinComputer(employee.id, comp.id)">
+                            <h3>{{ comp.title }}</h3>
+                            <p>{{ comp.number }}</p>
+                            <p>{{ comp.type }}</p>
                     </div>
                 </div>
             </div>
-
-
-            <div *ngIf="employee.computer===undefined">
-                <button class="unpin-btn" (click)="clickPin(employee.id)">Закрепить компьютер</button>
-            </div>
-            <div class="available-comps" *ngIf="availableComps.length>0 && empForPin===employee.id">
-                <div class="a-comp-el" *ngFor="let comp of availableComps" (click)="pinComputer(employee.id, comp.id)">
-                        <h3>{{ comp.title }}</h3>
-                        <p>{{ comp.number }}</p>
-                        <p>{{ comp.type }}</p>
-                </div>
-            </div>
         </div>
+    </div>
+
+    <div class="add-new-emp">
+        <app-add-new-employee></app-add-new-employee>
     </div>
 </div>

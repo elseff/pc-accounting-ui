@@ -9,11 +9,12 @@ import { EmployeeModel } from '../../_model/employee/EmployeeModel';
 import { EmployeeService } from '../../_service/employee.service';
 import { ComputerModel } from '../../_model/computer/ComputerModel';
 import { ComputerService } from '../../_service/computer.service';
+import { AddNewEmployeeComponent } from "../add-new-employee/add-new-employee.component";
 
 @Component({
   selector: 'app-employee',
   standalone: true,
-  imports: [NgFor, FormsModule, CommonModule, RouterModule],
+  imports: [NgFor, FormsModule, CommonModule, RouterModule, AddNewEmployeeComponent],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
 })

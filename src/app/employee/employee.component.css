@@ -173,3 +173,18 @@ p {
     border-color: rgb(43, 90, 57);
     transform: scale(1.1);
 }
+
+.emps-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.all-emps{
+    width:50%
+}
+
+.add-new-emp{
+    width: 40%;
+}

@@ -1,0 +1,28 @@
+<h1>Добавление сотрудника</h1>
+<div class="block">
+    <h3>Имя</h3>
+    <input type="text" [(ngModel)]="request.firstName">
+</div>
+<div class="block">
+    <h3>Фамилия</h3>
+    <input type="text" [(ngModel)]="request.lastName">
+</div>
+<div class="block">
+    <h3>Отчество</h3>
+    <input type="text" [(ngModel)]="request.patronymic">
+</div>
+<div class="block">
+    <h3>Тип</h3>
+    <select name="specialities" class="specialities-input" [(ngModel)]="request.speciality">
+        <option value="system-admin">Системный администратор</option>
+        <option value="accountant">Бухгалтер</option>
+        <option [defaultSelected]="true" value="developer">Программист</option>
+        <option value="analyst">Аналитик</option>
+        <option value="tester">Тестировщик</option>
+        <option value="director">Директор</option>
+    </select>    
+</div>
+
+<div class="block">
+    <button class="create-emp-btn" (click)="addNewEmployee()">Добавить</button>
+</div>
