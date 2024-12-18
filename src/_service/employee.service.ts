@@ -22,6 +22,11 @@ export class EmployeeService {
     return this.httpClient.get<EmployeeModel[]>(this.api, {headers: this.headers})
   }
 
+  findAllFreeEmployees(): Observable<EmployeeModel[]> {
+    const parameters: HttpParams = new HttpParams().set('free', true);
+    return this.httpClient.get<EmployeeModel[]>(this.api, {headers: this.headers, params: parameters})
+  }
+
   addNewEmployee(addEmployeeRequest: AddEmployeeRequest): Observable<AddEmployeeResponse> {
     return this.httpClient.post<AddEmployeeResponse>(this.api, addEmployeeRequest, {headers: this.headers})
   }

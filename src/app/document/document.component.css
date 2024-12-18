@@ -1,0 +1,30 @@
+.base-button {
+    background-color: rgb(216, 235, 145);
+    border-color: rgb(177, 192, 121);
+    border-style: solid;
+    border-width: 3px;
+    padding: 10px 15px;
+    font-size: large;
+    margin: 5px;
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход */
+}
+
+.base-button:hover {
+    transform: scale(1.1); /* Эффект изменения размера при наведении */
+    background-color: rgb(213, 214, 119);
+    border-color: rgb(125, 138, 78); /* Изменение цвета при наведении */
+    transform: rotate(-2deg);
+}
+
+.update {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: x-large;
+}

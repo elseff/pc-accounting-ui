@@ -157,3 +157,19 @@ p {
     border-color: rgb(85, 43, 90);
     transform: scale(1.1);
 }
+
+.a-emp-el {
+    background-color: rgb(215, 250, 227);
+    border-color: rgb(94, 163, 128);
+    border-style: solid;
+    border-width: 3px;
+    margin: 5px;
+    padding: 5px;
+    transition: transform 0.3s, background-color 0.3s; /* Плавный переход */
+}
+
+.a-emp-el:hover {
+    background-color: rgb(168, 196, 157);
+    border-color: rgb(43, 90, 57);
+    transform: scale(1.1);
+}

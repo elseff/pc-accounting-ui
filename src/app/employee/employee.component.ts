@@ -20,9 +20,11 @@ import { ComputerService } from '../../_service/computer.service';
 export class EmployeeComponent {
   employees: EmployeeModel[] = []
   isPinClicked: boolean = false;
+  isPassClicked: boolean = false;
   availableComps: ComputerModel[] = []
   availableEmployees: EmployeeModel[] = []
-  
+  empForPass?: number;
+  empForPin?: number;
   constructor(private employeeService: EmployeeService, private computerService: ComputerService){
 
   }
@@ -36,7 +38,12 @@ export class EmployeeComponent {
     })
   }
 
-  clickPin(){
+  clickPin(empId: number){
+    if(this.empForPin==undefined){
+      this.empForPin=empId;
+    }else{
+      this.empForPin = undefined;
+    }
     this.isPinClicked = !this.isPinClicked;
     this.availableComps = []
     if(this.isPinClicked){ 
@@ -58,6 +65,29 @@ export class EmployeeComponent {
   }
 
   passResponsibility(from: number, to: number){
-    this.employeeService.passResponsibility(from, to).subscribe(r=>console.log(r));
+    this.availableEmployees = []
+    this.employeeService.passResponsibility(from, to).subscribe(r=>this.findAll());
+  }
+
+  availableEmployeesFiltered(id: number): EmployeeModel[]{
+    this.availableEmployees = this.availableEmployees.filter(e=>e.id!=id);
+    return this.availableEmployees;
+  }
+
+  clickPass(empId: number){
+    if(this.empForPass==undefined){
+      this.empForPass=empId;
+    }else{
+      this.empForPass = undefined;
+    }
+    this.isPassClicked = !this.isPassClicked;
+    this.availableEmployees = []
+    if(this.isPassClicked){ 
+      this.employeeService.findAllFreeEmployees().subscribe(emps=>{
+        emps.forEach(emp=>{
+          this.availableEmployees.push(emp);
+        })
+      })
+    }
   }
 }

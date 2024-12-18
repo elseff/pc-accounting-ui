@@ -7,6 +7,19 @@ h1 {
     font-size: xx-large;
 }
 
+.update {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: x-large;
+}
+
 .computer-element {
     background-color: rgb(212, 236, 240);
     border-width: 1;

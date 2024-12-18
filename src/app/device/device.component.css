@@ -16,6 +16,19 @@
     transform: rotate(-2deg);
 }
 
+.update {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: x-large;
+}
+
 /* device-list.component.css */
 .device-list {
     display: block; /* Блочное отображение контейнера */
