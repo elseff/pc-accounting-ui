@@ -27,6 +27,11 @@ export class ComputerService {
         return this.httpClient.get<ComputerModel[]>(this.api, {headers: this.headers});
     }
 
+    findAllFreeComputers(): Observable<ComputerModel[]> {
+        const params: HttpParams = new HttpParams().set('free',true)
+        return this.httpClient.get<ComputerModel[]>(this.api, {headers: this.headers, params: params});
+    }
+
     addComputer(request: AddEmptyComputerRequest): Observable<AddComputerResponse> {
         return this.httpClient.post<AddComputerResponse>(this.api, request, {headers: this.headers});
     }

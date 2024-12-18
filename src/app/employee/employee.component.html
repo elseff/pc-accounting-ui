@@ -1,0 +1,42 @@
+<div>
+    <div class="title">
+        <h2>Сотрудники</h2>
+    </div>
+    <div>
+        <button class="base-button" (click)="findAll()">Обновить</button>
+        <button class="base-button" routerLink="/computers">Компьютеры</button>
+        <button routerLink="/devices" class="base-button">Устройства</button>
+        <button routerLink="/employees" class="base-button">Сотрудники</button>
+        <button routerLink="/employees/logs" class="base-button">Логи сотрудников</button>
+    </div>
+    <div class="employee-list">
+        <div class="employee-card" *ngFor="let employee of employees">
+
+            <h2>{{ employee.firstName }} {{ employee.lastName }} {{ employee.patronymic }}</h2>
+            <p>{{ employee.speciality }}</p>
+            <div class="computer-info"*ngIf="employee.computer!=undefined">
+                <h2> ID: {{ employee.computer.id }}</h2>
+                <h2>{{ employee.computer.title }}</h2>
+                <p>{{ employee.computer.number }}</p>    
+                <span class="ready-status" *ngIf="employee.computer.ready===false">Не готов</span>
+                <span class="ready-status" *ngIf="employee.computer.ready===true">Готов</span>
+                
+            </div>
+            <div *ngIf="employee.computer!=undefined">
+                <button class="pin-btn" (click)="unpinComputer(employee.id, employee.computer.id)">Открепить компьютер</button>
+                <button class="pass-btn">Передать ответственность</button>
+            </div>
+            <div *ngIf="employee.computer===undefined">
+                <button class="unpin-btn" (click)="clickPin()">Закрепить компьютер</button>
+            </div>
+            <div class="available-comps" *ngIf="availableComps.length>0">
+                <h1>Доступные компьюетры</h1>
+                <div class="a-comp-el" *ngFor="let comp of availableComps" (click)="pinComputer(employee.id, comp.id)">
+                        <h3>{{ comp.title }}</h3>
+                        <p>{{ comp.number }}</p>
+                        <p>{{ comp.type }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
