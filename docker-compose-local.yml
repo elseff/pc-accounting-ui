@@ -3,7 +3,7 @@ version: '3'
 services:
   credit-service-client:
     container_name: pc-accounting-ui-container
-    image: "${CONTAINER_REGISTRY_URL}/${CONTAINER_REGISTRY_USERNAME}/pc-accounting-ui:latest"
+    image: "${CONTAINER_REGISTRY_URL}/${CONTAINER_REGISTRY_USERNAME}/${CONTAINER_REGISTRY_UI_REPO}:latest"
     environment:
       - "CLIENT_PORT=${CLIENT_PORT}"
     ports:
