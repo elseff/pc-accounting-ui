@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   credit-service-client:
     container_name: pc-accounting-ui-container
